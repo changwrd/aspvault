@@ -2,6 +2,7 @@ import "dotenv/config";
 import {
   Account,
   JsonRpcProvider,
+  FailoverRpcProvider,
   KeyPairSigner,
   nearToYocto,
   teraToGas,
@@ -36,7 +37,11 @@ if (!secretKey || !secretKey.startsWith("ed25519:")) {
   process.exit(1);
 }
 
-const provider = new JsonRpcProvider({ url: RPC_URL });
+const provider = new FailoverRpcProvider([
+  new JsonRpcProvider({ url: RPC_URL }),
+  new JsonRpcProvider({ url: "https://rpc.testnet.near.org" }),
+  new JsonRpcProvider({ url: "https://archival-rpc.testnet.fastnear.com" }),
+]);
 const signer = KeyPairSigner.fromSecretKey(secretKey as KeyPairString);
 const account = new Account(AGENT_ID, provider, signer);
 
