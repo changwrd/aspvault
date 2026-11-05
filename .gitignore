@@ -1,0 +1,9 @@
+node_modules/
+target/
+.env
+.env.local
+*.key
+.near-credentials/
+.vercel/
+.next/
+dist/
