@@ -126,7 +126,7 @@ export default function App() {
               {policy && policy.allowed_recipients.length > 0 ? (
                 <span className="flex flex-col items-end gap-1">
                   {policy.allowed_recipients.map((r) => (
-                    <span key={r} className="break-all rounded-md bg-brand-soft px-2 py-1 font-mono text-xs font-medium text-brand">
+                    <span key={r} className="whitespace-nowrap rounded-md bg-brand-soft px-2 py-1 font-mono text-xs font-medium text-brand">
                       {r}
                     </span>
                   ))}
