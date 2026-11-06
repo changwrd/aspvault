@@ -37,12 +37,12 @@ const provider = new FailoverRpcProvider([
   new JsonRpcProvider({ url: 'https://archival-rpc.testnet.fastnear.com' }),
 ])
 
-async function view<T>(method: string, args: object = {}): Promise<T> {
-  return (await provider.callFunction<T>({
+async function view<T>(method: string, args: Record<string, unknown> = {}): Promise<T> {
+  return (await provider.callFunction({
     contractId: VAULT_ID,
     method,
     args,
-  })) as T
+  })) as unknown as T
 }
 
 export async function fetchVaultState(): Promise<VaultState> {
