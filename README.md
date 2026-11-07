@@ -18,7 +18,7 @@ Allowance is a spending vault on NEAR for AI agents. The owner funds a vault and
 | **Live dashboard** | https://allowance-xjoa.vercel.app |
 | **Vault contract (testnet)** | [`vault.allowance-owner-hp.testnet`](https://explorer.testnet.near.org/accounts/vault.allowance-owner-hp.testnet) |
 | **Tracks** | AI Security & Defense (`security`, primary), Agent Economy (`agents`) |
-| **Team** | 1 (solo) |
+| **Team** | 2 |
 | **Network** | NEAR testnet |
 | **Status** | Working prototype, not audited |
 | **License** | MIT |
