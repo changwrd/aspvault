@@ -1,3 +1,4 @@
+import OwnerControls from "./OwnerControls"
 import { useCallback, useEffect, useState, type ReactNode } from 'react'
 import {
   AGENT_ID,
@@ -137,6 +138,8 @@ export default function App() {
             </Row>
           </dl>
         </section>
+
+        <OwnerControls state={state} onChanged={load} />
 
         <section className="mt-12">
           <h2 className="text-xl font-bold tracking-tight">Payment feed</h2>
