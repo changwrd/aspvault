@@ -66,7 +66,19 @@ No keys or accounts are needed for any of these steps.
 
 Amounts on-chain are in yoctoNEAR (1 NEAR = 10^24).
 
-<!-- SCREENSHOTS -->
+## Screenshots
+
+![Allowance dashboard: agent status, budget meter and policy](docs/dashboard.png)
+
+*Dashboard: the agent's status, how much of today's budget is left, and its policy, read live from NEAR testnet.*
+
+![Payment feed with allowed and blocked attempts](docs/payment-feed.png)
+
+*Payment feed: every attempt is recorded on-chain with its verdict. The blocked rows show the prompt-injected payment and the oversized payment being stopped.*
+
+![Owner controls: kill switch and fund the vault](docs/owner-controls.png)
+
+*Owner controls: only the vault owner sees the kill switch and the fund button.*
 
 ## How it works
 
