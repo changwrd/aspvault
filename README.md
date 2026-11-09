@@ -115,7 +115,7 @@ Checks run in this order, and the first failure decides the reason:
 | 5 | Recipient not on the allowlist | `recipient not allowlisted` |
 | 6 | Amount would exceed the daily budget (24-hour window) | `daily budget exceeded` |
 | 7 | Vault balance below the amount | `insufficient vault balance` |
-| - | All checks pass | `ok` |
+| - | All checks pass | ok (stored in the on-chain log; the dashboard shows reasons only for blocked attempts) |
 
 ## Security model
 
@@ -141,7 +141,7 @@ Policy fields (set per agent):
 | `daily_budget` | NEAR amount | Most the agent may spend in a 24-hour window |
 | `allowed_recipients` | list of accounts | The only accounts the agent may pay |
 | `paused` | bool | Kill switch for this agent |
-| `window_start_ms`, `spent_in_window` | numbers | Bookkeeping for the daily window |
+| window_start_ms, spent_in_window | numbers | Track the current 24-hour spending window |
 
 Methods:
 
@@ -326,7 +326,7 @@ Reputation systems and scam detection, which the security track also lists, are 
 | Unbounded attempt log | Blocked and allowed attempts are stored on-chain so they can be shown. This costs a little gas and the log only grows. The dashboard reads the latest 50 |
 | `set_policy` resets state | Setting a policy again resets the day's spending and un-pauses the agent |
 | Wallet coverage | Owner controls were tested with the NEAR CLI wallet option, which shows a `near` command to run and asks for the transaction ID. Other wallets in the connector were not tested |
-| Fund-the-vault control | Implemented in the dashboard but not yet exercised in testing |
+| Fund-the-vault control | Tested with the NEAR CLI wallet option only: the dashboard produces a `near tokens ... send-near` command to run |
 | Simulated agent | The demo agent is rule-based, not an LLM |
 
 ## Roadmap
