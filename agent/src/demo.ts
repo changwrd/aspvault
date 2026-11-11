@@ -1,4 +1,5 @@
 import "dotenv/config";
+import { setDefaultResultOrder } from "node:dns";
 import {
   Account,
   JsonRpcProvider,
@@ -26,7 +27,9 @@ type Policy = {
   spent_in_window: string;
 };
 
-const RPC_URL = process.env.NEAR_RPC_URL ?? "https://test.rpc.fastnear.com";
+setDefaultResultOrder("ipv4first");
+
+const RPC_URL = process.env.NEAR_RPC_URL ?? "https://archival-rpc.testnet.fastnear.com";
 const VAULT_ID = process.env.VAULT_ID ?? "vault.allowance-owner-hp.testnet";
 const AGENT_ID = process.env.AGENT_ID ?? "agent.allowance-owner-hp.testnet";
 const VENDOR_ID = process.env.VENDOR_ID ?? "vendor.allowance-owner-hp.testnet";
@@ -40,7 +43,7 @@ if (!secretKey || !secretKey.startsWith("ed25519:")) {
 const provider = new FailoverRpcProvider([
   new JsonRpcProvider({ url: RPC_URL }),
   new JsonRpcProvider({ url: "https://rpc.testnet.near.org" }),
-  new JsonRpcProvider({ url: "https://archival-rpc.testnet.fastnear.com" }),
+  new JsonRpcProvider({ url: "https://test.rpc.fastnear.com" }),
 ]);
 const signer = KeyPairSigner.fromSecretKey(secretKey as KeyPairString);
 const account = new Account(AGENT_ID, provider, signer);
