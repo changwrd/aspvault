@@ -15,7 +15,7 @@ Aspvault is a spending vault on NEAR for AI agents. The owner funds a vault and 
 
 | | |
 |---|---|
-| **Live dashboard** | https://allowance-xjoa.vercel.app |
+| **Live dashboard** | https://aspvault-app.vercel.app |
 | **Vault contract (testnet)** | [`vault.allowance-owner-hp.testnet`](https://explorer.testnet.near.org/accounts/vault.allowance-owner-hp.testnet) |
 | **Tracks** | AI Security & Defense (`security`, primary), Agent Economy (`agents`) |
 | **Team** | 2 |
@@ -59,7 +59,7 @@ No keys or accounts are needed for any of these steps.
 
 | # | Do this | You should see |
 |---|---|---|
-| 1 | Open https://allowance-xjoa.vercel.app | A status pill (**Agent active**, or **Agent paused** if the owner has pressed the kill switch), the vault balance, a budget meter, the policy, and a payment feed with green **Allowed** and red **Blocked** rows. Blocked rows show the reason, such as `recipient not allowlisted`. |
+| 1 | Open https://aspvault-app.vercel.app | A status pill (**Agent active**, or **Agent paused** if the owner has pressed the kill switch), the vault balance, a budget meter, the policy, and a payment feed with green **Allowed** and red **Blocked** rows. Blocked rows show the reason, such as `recipient not allowlisted`. |
 | 2 | Read the live policy from testnet (needs the [`near` CLI](https://github.com/near/near-cli-rs)):<br>`near contract call-function as-read-only vault.allowance-owner-hp.testnet get_policy json-args '{"agent":"agent.allowance-owner-hp.testnet"}' network-config testnet now` | `max_per_tx` of `500000000000000000000000` (0.5 NEAR), `daily_budget` of `1000000000000000000000000` (1 NEAR), and `vendor.allowance-owner-hp.testnet` as the only allowed recipient. |
 | 3 | Read the on-chain attempt log:<br>`near contract call-function as-read-only vault.allowance-owner-hp.testnet get_attempts json-args '{"limit":10}' network-config testnet now` | Entries with `allowed` true or false and a `reason`. |
 | 4 | Run the sandbox tests (needs Rust, the `wasm32-unknown-unknown` target and [`cargo-near`](https://github.com/near/cargo-near)):<br>`cd contracts/vault && cargo test --test vault_rules -- --nocapture` | Nine numbered checks, then `All vault rules verified.` and `test result: ok. 1 passed`. The first run takes several minutes because it builds the contract and starts a local NEAR sandbox. |
