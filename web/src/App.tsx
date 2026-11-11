@@ -71,9 +71,7 @@ export default function App() {
       <header className="border-b border-line">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-5">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-lg font-extrabold text-white">
-              A
-            </div>
+            <img src="/favicon.svg" alt="Aspvault logo" className="h-10 w-10" />
             <div>
               <p className="text-lg font-extrabold leading-none tracking-tight">Aspvault</p>
               <p className="mt-1 text-xs text-muted">A budget for your AI agent, not your wallet</p>
