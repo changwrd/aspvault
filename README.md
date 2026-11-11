@@ -1,4 +1,4 @@
-# Allowance
+# Aspvault
 
 **Give your AI agent a budget, not your wallet.**
 
@@ -9,7 +9,7 @@
 ![License: MIT](https://img.shields.io/badge/license-MIT-2f3fd0)
 ![Built for NEAR HACKATHON](https://img.shields.io/badge/built%20for-NEAR%20HACKATHON-2f3fd0)
 
-Allowance is a spending vault on NEAR for AI agents. The owner funds a vault and sets rules: a cap per payment, a daily budget and a list of allowed recipients. The agent holds only a restricted key that can call the vault's `pay` method and nothing else. The smart contract enforces the rules, so they still hold when the agent is tricked by a prompt injection.
+Aspvault is a spending vault on NEAR for AI agents. The owner funds a vault and sets rules: a cap per payment, a daily budget and a list of allowed recipients. The agent holds only a restricted key that can call the vault's `pay` method and nothing else. The smart contract enforces the rules, so they still hold when the agent is tricked by a prompt injection.
 
 <!-- DEMO_VIDEO -->
 
@@ -51,7 +51,7 @@ An AI agent that can spend money can be talked into spending it badly. A hidden 
 |---|---|---|
 | Agent holds a full-access key | In the agent's prompt or code | Everything, including draining its own account |
 | Agent code checks its own limits | In the agent's code | Skip the check |
-| **Allowance** | **In a smart contract the agent cannot change** | **Only call `pay`, within the owner's limits** |
+| **Aspvault** | **In a smart contract the agent cannot change** | **Only call `pay`, within the owner's limits** |
 
 ## Verify it in two minutes
 
@@ -68,7 +68,7 @@ Amounts on-chain are in yoctoNEAR (1 NEAR = 10^24).
 
 ## Screenshots
 
-![Allowance dashboard: agent status, budget meter and policy](docs/dashboard.png)
+![Aspvault dashboard: agent status, budget meter and policy](docs/dashboard.png)
 
 *Dashboard: the agent's status, how much of today's budget is left, and its policy, read live from NEAR testnet.*
 

@@ -115,7 +115,7 @@ async function runStep(
 
 async function main() {
   const mode = process.argv[2] ?? "full";
-  console.log("Allowance demo agent");
+  console.log("Aspvault demo agent");
   console.log(`Agent:   ${AGENT_ID}`);
   console.log(`Vault:   ${VAULT_ID}`);
   console.log(`Network: ${RPC_URL}`);

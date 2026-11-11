@@ -75,7 +75,7 @@ export default function App() {
               A
             </div>
             <div>
-              <p className="text-lg font-extrabold leading-none tracking-tight">Allowance</p>
+              <p className="text-lg font-extrabold leading-none tracking-tight">Aspvault</p>
               <p className="mt-1 text-xs text-muted">A budget for your AI agent, not your wallet</p>
             </div>
           </div>
