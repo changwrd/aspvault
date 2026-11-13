@@ -11,7 +11,11 @@
 
 Aspvault is a spending vault on NEAR for AI agents. The owner funds a vault and sets rules: a cap per payment, a daily budget and a list of allowed recipients. The agent holds only a restricted key that can call the vault's `pay` method and nothing else. The smart contract enforces the rules, so they still hold when the agent is tricked by a prompt injection.
 
-<!-- DEMO_VIDEO -->
+## Demo video
+
+[![Watch the Aspvault demo on X](docs/dashboard.png)](https://x.com/changwrd/status/2121188704131690721)
+
+*Click the image to watch the demo on X: a poisoned invoice makes the agent decide to pay an attacker, the vault blocks it, and the owner pauses the agent.*
 
 | | |
 |---|---|
